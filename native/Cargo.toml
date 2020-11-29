@@ -1,0 +1,18 @@
+[package]
+name = "electron-test"
+version = "0.1.0"
+authors = ["Romira915 <40430090+Romira915@users.noreply.github.com>"]
+license = "MIT"
+build = "build.rs"
+edition = "2018"
+exclude = ["artifacts.json", "index.node"]
+
+[lib]
+name = "electron_test"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+neon-build = "0.5.2"
+
+[dependencies]
+neon = "0.5.2"

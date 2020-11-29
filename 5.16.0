@@ -1,0 +1,33 @@
+
+> lzma-native@6.0.1 install C:\Users\Yudai\workspace\Project\electron-test\node_modules\lzma-native
+> node-pre-gyp install --fallback-to-build && rimraf build
+
+[lzma-native] Success: "C:\Users\Yudai\workspace\Project\electron-test\node_modules\lzma-native\binding-v6.0.1-n-api-win32-x64\lzma_native.node" is installed via remote
+
+> core-js@3.7.0 postinstall C:\Users\Yudai\workspace\Project\electron-test\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://www.patreon.com/zloirock [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> electron@11.0.3 postinstall C:\Users\Yudai\workspace\Project\electron-test\node_modules\electron
+> node install.js
+
++ eslint-config-google@0.14.0
++ eslint@7.14.0
++ eslint-plugin-react@7.21.5
++ @typescript-eslint/eslint-plugin@4.8.2
++ @typescript-eslint/parser@4.8.2
+added 107 packages from 22 contributors, removed 146 packages, updated 467 packages and audited 574 packages in 21.511s
+
+71 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
