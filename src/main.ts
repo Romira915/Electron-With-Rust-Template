@@ -21,6 +21,8 @@ const createWindow = (): void => {
     // tsc でコンパイルするので、出力先の dist の相対パスで指定する。
     win.loadFile('./index.html');
 
+    console.log(require('../native').hello())
+
     // 開発者ツールを起動する
     win.webContents.openDevTools();
 };
