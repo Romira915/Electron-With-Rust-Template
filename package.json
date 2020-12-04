@@ -21,11 +21,13 @@
   "scripts": {
     "start": "electron build/main.js",
     "install": "electron-build-env neon build",
-    "build.d": "",
-    "build.r": "electron-builder build -w",
+    "build.d": "run-s build.rs build.ts",
     "build.main": "tsc",
     "build.render": "webpack",
-    "build.ts": "run-s build.main build.render"
+    "build.ts": "run-s build.main build.render",
+    "build.rs": "electron-build-env neon build",
+    "package:win": "electron-builder build -w",
+    "debug": "run-s build.d start"
   },
   "dependencies": {
     "eslint-loader": "^4.0.2",
