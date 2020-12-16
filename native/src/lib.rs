@@ -5,7 +5,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
 }
 
 fn open(mut cx: FunctionContext) -> JsResult<JsString> {
-    std::fs::File::create("foo.txt");
+    std::fs::File::create("foo.txt").unwrap();
     Ok(cx.string("create file."))
 }
 

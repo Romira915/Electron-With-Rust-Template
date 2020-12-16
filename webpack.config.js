@@ -37,7 +37,7 @@ module.exports = {
                 // ローダーの指定
                 // TypeScript をコンパイルする
                 use: 'ts-loader',
-            },
+            }
         ],
     },
     // 処理対象のファイルを記載する

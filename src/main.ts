@@ -1,14 +1,21 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, Menu, session } from 'electron';
 import path from 'path';
+import os from 'os';
+
+require('electron-reload')(path.join(process.cwd(), 'build'), {
+    electron: path.join(process.cwd(), 'node_modules', '.bin', 'electron.cmd'),
+});
+
+const native = require('../native');
 
 // セキュアな Electron の構成
 // 参考: https://qiita.com/pochman/items/64b34e9827866664d436
-
+let mainWindow: BrowserWindow | null = null;
 const createWindow = (): void => {
     // レンダープロセスとなる、ウィンドウオブジェクトを作成する。
-    const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+    mainWindow = new BrowserWindow({
+        width: 1280,
+        height: 720,
         webPreferences: {
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
@@ -19,12 +26,14 @@ const createWindow = (): void => {
 
     // 読み込む index.html。
     // tsc でコンパイルするので、出力先の dist の相対パスで指定する。
-    win.loadFile('./index.html');
+    mainWindow.loadFile(__dirname + '/index.html');
 
-    console.log(require('../native').hello())
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    });
 
     // 開発者ツールを起動する
-    win.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 };
 
 // Electronの起動準備が終わったら、ウィンドウを作成する。
@@ -46,4 +55,8 @@ app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createWindow();
     }
+});
+
+ipcMain.on('hello', (event, arg) => {
+    console.log(native.hello());
 });
