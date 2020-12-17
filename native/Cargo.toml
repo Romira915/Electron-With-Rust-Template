@@ -1,5 +1,5 @@
 [package]
-name = "electron-test"
+name = "native"
 version = "0.1.0"
 authors = ["Romira915 <40430090+Romira915@users.noreply.github.com>"]
 license = "MIT"
@@ -8,11 +8,11 @@ edition = "2018"
 exclude = ["artifacts.json", "index.node"]
 
 [lib]
-name = "electron_test"
+name = "native"
 crate-type = ["cdylib"]
 
 [build-dependencies]
-neon-build = "0.5.2"
+neon-build = "0.6.0"
 
 [dependencies]
-neon = "0.5.2"
+neon = "0.6.0"

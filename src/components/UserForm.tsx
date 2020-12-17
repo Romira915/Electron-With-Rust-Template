@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeUserAction } from '../actions/UserActions';
 import { IState } from '../states/IState';
 import IUser from '../states/IUser';
-import CountButton from './CountButton';
 import TextBox from './TextBox';
 
 // データは、Storeから渡されるので、プロパティは必要ありません。
@@ -28,17 +27,11 @@ const UserForm: React.FC = () => {
                 <TextBox
                     value={name}
                     label="ユーザー名"
-                    type="password"
+                    type="text"
                     onChangeText={onNameChange}
                 />
             </p>
-            <p>
-                <CountButton
-                    count={count}
-                    label="訪問"
-                    onClick={onCountClick}
-                />
-            </p>
+            <p>{name}</p>
         </div>
     );
 };

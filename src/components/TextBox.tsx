@@ -1,20 +1,12 @@
-import React, { useMemo, useCallback } from 'react'; // --(a);
+import React, { useMemo, useCallback } from 'react';
 
-// 親コンポーネントから渡されるプロパティを定義する // --(b)
 interface IProps {
-    /** ラベル文字列 */
     label: string;
-    /** テキストボックスのタイプ */
-    type: 'text' | `password`;
-    /** テキストボックスに表示する値 */
+    type: 'text' | 'password';
     value: string;
-    /** 値の確定時にその値を親プロパティが取得するためにコールバック関数を提供する */
     onChangeText: (value: string) => void;
 }
 
-/**
- * ラベル付きのテキストボックスを提供する
- */
 const TextBox: React.FC<IProps> = props => {
     // -(c)
     // ラベルコンポーネントをメモ化して毎回判定しないようにする
